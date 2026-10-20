@@ -38,3 +38,27 @@
 │ • Auditd Integrity Monitoring   │                       │ • Auditd Integrity Monitoring      │
 │ • OpenSSH Ciphers Enforcement   │                       │ • OpenSSH Hardening & Fail2ban     │
 └─────────────────────────────────┘                       └────────────────────────────────────┘
+
+
+```
+
+## Architectural Overview
+
+# Prerequisites:
+Ansible Control Node: Python 3.10+, ansible-core >= 2.15
+Target Nodes: SSH access with sudo privileges
+
+# Installation:
+# Clone the repository
+git clone [https://github.com/your-org/InfraHardener-ZeroTrust.git](https://github.com/your-org/InfraHardener-ZeroTrust.git)
+cd InfraHardener-ZeroTrust
+
+# Install required Ansible collection dependencies
+ansible-galaxy collection install -r requirements.yml
+
+# Dry-Run & Production Run:
+# Dry-run execution (Check mode)
+ansible-playbook -i inventory.ini site.yml --check --diff
+
+# Enforce hardening across production inventory
+ansible-playbook -i inventory.ini site.yml --limit production

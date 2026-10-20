@@ -42,8 +42,6 @@
 
 ```
 
-## Architectural Overview
-
 # Prerequisites:
 Ansible Control Node: Python 3.10+, ansible-core >= 2.15
 Target Nodes: SSH access with sudo privileges

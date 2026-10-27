@@ -42,14 +42,21 @@
 
 ```
 
-# Prerequisites:
-Ansible Control Node: Python 3.10+, ansible-core >= 2.15
-Target Nodes: SSH access with sudo privileges
+## 🚀 Quick Start & Deployment Guide
+
+### Prerequisites: 
+
+- Ansible Control Node: Python 3.10+ , Ansible-core >= 2.15
+
+- Target Nodes: SSH access with sudo privileges
 
 # Installation:
-# Clone the repository
+### Step 1: Clone Repository
+
+```bash
 git clone [https://github.com/your-org/InfraHardener-ZeroTrust.git](https://github.com/your-org/InfraHardener-ZeroTrust.git)
 cd InfraHardener-ZeroTrust
+```
 
 # Install required Ansible collection dependencies
 ansible-galaxy collection install -r requirements.yml

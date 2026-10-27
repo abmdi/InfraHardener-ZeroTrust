@@ -59,11 +59,18 @@ cd InfraHardener-ZeroTrust
 ```
 
 # Install required Ansible collection dependencies
+```bash
 ansible-galaxy collection install -r requirements.yml
+```
 
 # Dry-Run & Production Run:
 # Dry-run execution (Check mode)
+```bash
 ansible-playbook -i inventory.ini site.yml --check --diff
+```
 
 # Enforce hardening across production inventory
+```bash
 ansible-playbook -i inventory.ini site.yml --limit production
+```
+

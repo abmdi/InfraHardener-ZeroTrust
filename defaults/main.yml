@@ -1,1 +1,32 @@
+# Defaults for system_hardening role
 
+# --- SSH Hardening ---
+ssh_port: 22
+ssh_permit_root_login: "no"
+ssh_password_authentication: "no"
+ssh_ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com"
+ssh_kex_algorithms: "curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512"
+ssh_macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com"
+ssh_allow_groups: "sudo wheel sysadmin"
+
+# --- Kernel / Sysctl Settings ---
+sysctl_ip_forward: 0
+sysctl_tcp_syncookies: 1
+sysctl_rp_filter: 1
+sysctl_dmesg_restrict: 1
+sysctl_accept_source_route: 0
+sysctl_icmp_echo_ignore_broadcasts: 1
+
+# --- Firewall Settings ---
+firewall_default_input_policy: "DROP"
+firewall_default_output_policy: "ACCEPT"
+firewall_default_forward_policy: "DROP"
+firewall_allowed_tcp_ports:
+  - 22
+firewall_rate_limit_ports:
+  - 22
+
+# --- Auditd Settings ---
+auditd_enable: true
+auditd_max_log_file: 50
+auditd_max_log_file_action: "ROTATE"

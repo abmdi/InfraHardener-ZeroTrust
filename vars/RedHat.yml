@@ -1,1 +1,3 @@
-
+firewall_package: firewalld
+auditd_package: auditd
+sshd_service_name: sshd
